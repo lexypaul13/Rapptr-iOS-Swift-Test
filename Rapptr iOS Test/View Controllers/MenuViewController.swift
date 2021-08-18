@@ -39,7 +39,7 @@ class MenuViewController: UIViewController {
         title = "Coding Tasks"
     }
     
-    // MARK: - Actions
+    // MARK: - IBActions
     @IBAction func didPressChatButton(_ sender: Any) {
         let chatViewController = ChatViewController()
         navigationController?.pushViewController(chatViewController, animated: true)

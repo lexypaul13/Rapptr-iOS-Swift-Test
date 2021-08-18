@@ -29,6 +29,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         title = "Chat"
         getChat()
         configureTable(tableView: chatTable)
@@ -36,10 +37,12 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     
-    // MARK: - Private
+    //MARK:- Functions
     private func configureTable(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.estimatedRowHeight = 88.0
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.register(UINib(nibName: "ChatTableViewCell", bundle: nil), forCellReuseIdentifier: "ChatTableViewCell")
         tableView.tableFooterView = UIView(frame: .zero)
     }
@@ -76,7 +79,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 220
+        return UITableView.automaticDimension
     }
     
     

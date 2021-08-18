@@ -20,12 +20,13 @@ import Foundation
 
 class ChatClient {
     
+    //MARK:- Variables
     static let shared = ChatClient()
-    
     private init(){}
+   
     
- 
-    func getMessages(completed:@escaping(MessageResponse?)->Void){
+    //MARK:- Functions
+    func getMessages(completed:@escaping(MessageResponse?)->Void){ // Peforms get request
         guard let url =  URL(string: CHAT_URL) else {
             print("Invalid URL")
             return

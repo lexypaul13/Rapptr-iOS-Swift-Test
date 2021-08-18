@@ -40,8 +40,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         title = "Login"
         decorateView()
-        
-        
     }
     
     @objc func updateTimer() {

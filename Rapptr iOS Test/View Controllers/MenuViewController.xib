@@ -150,43 +150,18 @@
                         <constraint firstItem="M2B-cL-mHi" firstAttribute="leading" secondItem="NUb-Zr-K2d" secondAttribute="leading" id="wjZ-lX-N6e"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nUm-Fc-5CB">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coding Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFP-5m-8Rs">
-                            <rect key="frame" x="158" y="29" width="98" height="21"/>
-                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" red="0.16315871479999999" green="0.35671681170000002" blue="0.52158868309999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <constraints>
-                        <constraint firstItem="FFP-5m-8Rs" firstAttribute="top" secondItem="nUm-Fc-5CB" secondAttribute="top" constant="29" id="Nj9-BL-sOA"/>
-                        <constraint firstAttribute="height" constant="64" id="iTh-l0-oN2"/>
-                        <constraint firstItem="FFP-5m-8Rs" firstAttribute="centerX" secondItem="nUm-Fc-5CB" secondAttribute="centerX" id="iXm-TO-vjG"/>
-                    </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="nUm-Fc-5CB" firstAttribute="trailing" secondItem="gu7-3R-qY6" secondAttribute="trailing" id="1zy-B1-6VS"/>
                 <constraint firstItem="zM6-7Q-2yN" firstAttribute="top" secondItem="kB4-Y2-lj9" secondAttribute="bottom" constant="24" id="24R-67-svX"/>
                 <constraint firstItem="zM6-7Q-2yN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="CbY-SO-ZW6"/>
                 <constraint firstItem="NUb-Zr-K2d" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="DNA-jx-yJs"/>
                 <constraint firstItem="gu7-3R-qY6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Iz7-OU-SSd"/>
-                <constraint firstItem="nUm-Fc-5CB" firstAttribute="leading" secondItem="gu7-3R-qY6" secondAttribute="leading" id="NMG-w2-W35"/>
                 <constraint firstAttribute="trailing" secondItem="NUb-Zr-K2d" secondAttribute="trailing" constant="30" id="RvP-zA-CdQ"/>
                 <constraint firstItem="kB4-Y2-lj9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="227" id="WVl-Sc-vyk"/>
                 <constraint firstAttribute="trailing" secondItem="gu7-3R-qY6" secondAttribute="trailing" id="Xfg-vd-ME3"/>
                 <constraint firstAttribute="trailing" secondItem="zM6-7Q-2yN" secondAttribute="trailing" constant="30" id="a6Z-Ra-LEm"/>
                 <constraint firstItem="NUb-Zr-K2d" firstAttribute="top" secondItem="zM6-7Q-2yN" secondAttribute="bottom" constant="24" id="abq-aJ-HLb"/>
-                <constraint firstItem="nUm-Fc-5CB" firstAttribute="top" secondItem="gu7-3R-qY6" secondAttribute="top" id="bEI-Ch-UaU"/>
                 <constraint firstItem="gu7-3R-qY6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hKu-Qh-pVF"/>
                 <constraint firstAttribute="bottom" secondItem="gu7-3R-qY6" secondAttribute="bottom" id="l9D-lH-L9j"/>
                 <constraint firstAttribute="trailing" secondItem="kB4-Y2-lj9" secondAttribute="trailing" constant="30" id="sgd-Ks-JzO"/>

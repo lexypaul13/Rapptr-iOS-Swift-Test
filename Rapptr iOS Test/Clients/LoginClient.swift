@@ -25,7 +25,9 @@ import Foundation
 
 
 class LoginClient{
-    static func getPostString(params:[String:Any]) -> String{
+    
+    
+    static func getPostString(params:[String:Any]) -> String{ //Converta dictionary into jsonString
         var data = [String]()
         for(key, value) in params{
             data.append(key + "=\(value)")
@@ -33,7 +35,8 @@ class LoginClient{
         return data.map { String($0) }.joined(separator: "&")
     }
     
-    static func callPost(url:URL, params:[String:Any], completed:@escaping (String) -> Void, error errorHandler: @escaping (String?) -> Void){
+    
+    static func callPost(url:URL, params:[String:Any], completed:@escaping (String) -> Void, error errorHandler: @escaping (String?) -> Void){ //Performs post request
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         
@@ -61,7 +64,7 @@ class LoginClient{
     }
 }
 
-func jsonToString(json: Any) -> String{
+func jsonToString(json: Any) -> String{ //Convert Json into String
     do {
         let data1 =  try JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted)
         let convertedString = String(data: data1, encoding: String.Encoding.utf8)

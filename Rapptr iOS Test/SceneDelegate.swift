@@ -22,11 +22,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let menuViewController = MenuViewController(nibName: "MenuViewController", bundle: nil)
         let navigationController = UINavigationController(rootViewController: menuViewController)
-        navigationController.navigationBar.isHidden = true
         window.rootViewController = navigationController
         
+        navigationController.navigationBar.barTintColor = UIColor.init(hexString: "0E5C89")
+        navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController.navigationBar.tintColor = .white
+        navigationController.navigationItem.leftItemsSupplementBackButton = true
+        navigationController.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.window = window
         window.makeKeyAndVisible()
+        
     }
 
     @available(iOS 13.0, *)
