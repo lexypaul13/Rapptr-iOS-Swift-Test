@@ -32,33 +32,6 @@ extension UIView{
     
     
     
-    @IBInspectable var cornerRadius: CGFloat { //Sets corner radius
-        get {
-            return layer.cornerRadius
-        }
-        set {
-            layer.cornerRadius = newValue
-            layer.masksToBounds = newValue > 0
-        }
-    }
-    
-    @IBInspectable var borderWidth: CGFloat { //Sets border width
-        get {
-            return layer.borderWidth
-        }
-        set {
-            layer.borderWidth = newValue
-        }
-    }
-    
-    @IBInspectable var borderColor: UIColor? { //Sets border color
-        get {
-            return UIColor(cgColor: layer.borderColor!)
-        }
-        set {
-            layer.borderColor = newValue?.cgColor
-        }
-    }
     
     @IBInspectable var circle: Bool{ //Turns image view circular
         get{
@@ -73,12 +46,7 @@ extension UIView{
         }
     }
     
-    
-    
 }
-
-
-
 
 extension UIImageView {
     func downloadImage( imageURL: String ) { //Downloads images
@@ -114,7 +82,7 @@ extension UIView{
 
 
 extension UIColor {
-    convenience init(hexString: String) {
+    convenience init(hexString: String) { //sets hexcolor for text
         let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int = UInt32()
         Scanner(string: hex).scanHexInt32(&int)

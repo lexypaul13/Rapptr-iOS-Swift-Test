@@ -54,11 +54,6 @@ class LoginViewController: UIViewController {
         timeTakenInApiCall += 0.01
         }
     
-
-  
-    
-    
-    
     // MARK: - Actions
     @IBAction func backAction(_ sender: Any) {
         let mainMenuViewController = MenuViewController()
