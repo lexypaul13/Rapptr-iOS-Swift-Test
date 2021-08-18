@@ -22,33 +22,19 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
      **/
     
     // MARK: - Properties
-    private var client: ChatClient?
-    private var messages: [Message]?
-    
+    private var messages: [Message] = []
     // MARK: - Outlets
     @IBOutlet weak var chatTable: UITableView!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        messages = [Message]()
-        configureTable(tableView: chatTable)
         title = "Chat"
-        
-        // TODO: Remove test data when we have actual data from the server loaded
-        messages?.append(Message(testName: "James", withTestMessage: "Hey Guys!"))
-        messages?.append(Message(testName:"Paul", withTestMessage:"What's up?"))
-        messages?.append(Message(testName:"Amy", withTestMessage:"Hey! :)"))
-        messages?.append(Message(testName:"James", withTestMessage:"Want to grab some food later?"))
-        messages?.append(Message(testName:"Paul", withTestMessage:"Sure, time and place?"))
-        messages?.append(Message(testName:"Amy", withTestMessage:"YAS! I am starving!!!"))
-        messages?.append(Message(testName:"James", withTestMessage:"1 hr at the Local Burger sound good?"))
-        messages?.append(Message(testName:"Paul", withTestMessage:"Sure thing"))
-        messages?.append(Message(testName:"Amy", withTestMessage:"See you there :P"))
-        
-        chatTable.reloadData()
+        getChat()
+        configureTable(tableView: chatTable)
     }
+    
+    
     
     // MARK: - Private
     private func configureTable(tableView: UITableView) {
@@ -58,6 +44,21 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.tableFooterView = UIView(frame: .zero)
     }
     
+    func getChat(){
+        ChatClient.shared.getMessages {  (messageResponse:MessageResponse?) in
+            guard let messages = messageResponse?.messages else {return
+                self.alert(message: "Please ensure internet was connected ", title: "No Internet connection")
+            }
+            DispatchQueue.main.async {
+                self.messages = messages
+                self.chatTable.reloadData()
+            }
+        }
+        
+    }
+    
+    
+    
     // MARK: - UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: ChatTableViewCell? = nil
@@ -65,18 +66,19 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let nibs = Bundle.main.loadNibNamed("ChatTableViewCell", owner: self, options: nil)
             cell = nibs?[0] as? ChatTableViewCell
         }
-        cell?.setCellData(message: messages![indexPath.row])
+        cell?.setCellData(message: messages[indexPath.row])
         return cell!
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messages!.count
+        return messages.count
     }
     
     // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 58.0
+        return 220
     }
+    
     
     // MARK: - IBAction
     @IBAction func backAction(_ sender: Any) {

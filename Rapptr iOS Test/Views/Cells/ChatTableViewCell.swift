@@ -28,9 +28,8 @@ class ChatTableViewCell: UITableViewCell {
     
     // MARK: - Public
     func setCellData(message: Message) {
-        header.text = message.username
-        body.text = message.text
-      //  guard let image = message.avatarURL else {return}
-     //   avatarImage.downloadImage(imageURL: image)
+        header.text = message.name
+        body.text = message.message
+        avatarImage.downloadImage(imageURL: message.avatarURL)
     }
 }

@@ -20,10 +20,41 @@ import Foundation
 
 class ChatClient {
     
-    var session: URLSession?
-    var chatURL = "http://dev.rapptrlabs.com/Tests/scripts/chat_log.php"
-    func fetchChatData(completion: @escaping ([Message]) -> Void, error errorHandler: @escaping (String?) -> Void) {
-       
+    static let shared = ChatClient()
+    
+    private init(){}
+    
+ 
+    func getMessages(completed:@escaping(MessageResponse?)->Void){
+        guard let url =  URL(string: CHAT_URL) else {
+            print("Invalid URL")
+            return
+        }
         
+        let task = URLSession.shared.dataTask(with: url){ data, response, error in
+            if let _ = error {
+                print(error.debugDescription)
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, response.statusCode==200 else {
+                print(error.debugDescription)
+                return
+            }
+            
+            guard let data = data else{
+                print(error.debugDescription)
+                return
+            }
+            do {
+                let apiResponse = try JSONDecoder().decode(MessageResponse.self, from: data)
+                completed(apiResponse)
+                
+            } catch{
+                print(error)
+            }
+        }
+        task.resume()
     }
 }
+
