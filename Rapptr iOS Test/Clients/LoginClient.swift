@@ -27,6 +27,7 @@ import Foundation
 class LoginClient{
     
     
+    //MARK:- Function
     static func getPostString(params:[String:Any]) -> String{ //Converta dictionary into jsonString
         var data = [String]()
         for(key, value) in params{

@@ -48,7 +48,8 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func getChat(){
-        ChatClient.shared.getMessages {  (messageResponse:MessageResponse?) in
+        ChatClient.shared.getMessages { [weak self] (messageResponse:MessageResponse?) in
+            guard let self = self else { return }
             guard let messages = messageResponse?.messages else {return
                 self.alert(message: "Please ensure internet was connected ", title: "No Internet connection")
             }

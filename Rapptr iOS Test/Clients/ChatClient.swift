@@ -25,7 +25,7 @@ class ChatClient {
     private init(){}
    
     
-    //MARK:- Functions
+    //MARK:- Function
     func getMessages(completed:@escaping(MessageResponse?)->Void){ // Peforms get request
         guard let url =  URL(string: CHAT_URL) else {
             print("Invalid URL")

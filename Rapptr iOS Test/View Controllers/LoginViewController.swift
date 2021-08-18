@@ -64,9 +64,10 @@ class LoginViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
         guard let url = URL(string: "http://dev.rapptrlabs.com/Tests/scripts/login.php") else { return }
         let parameter: [String: String] = ["email" : "info@rapptrlabs.com", "password" : "Test123"]
-        LoginClient.callPost(url: url, params: parameter) { [self] response in
+        LoginClient.callPost(url: url, params: parameter) { [weak self] response in
+            guard let self = self else { return }
             self.timer?.invalidate()
-            self.alert(message:  "time Taken: \(timeTakenInApiCall) ms\n" + response, title: "")
+            self.alert(message:  "time Taken: \(self.timeTakenInApiCall) ms\n" + response, title: "")
         } error: { error in
             self.timer?.invalidate()
             self.alert(message:"time Taken: \(self.timeTakenInApiCall)m\n\(error ?? "")"  , title: "")
