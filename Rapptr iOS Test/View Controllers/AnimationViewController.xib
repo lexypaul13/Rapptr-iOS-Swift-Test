@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnimationViewController">
             <connections>
-                <outlet property="imageLogoView" destination="5DT-RY-uzd" id="r3B-37-Vgc"/>
+                <outlet property="imageLogoView" destination="tGw-dt-at2" id="11k-Tg-0at"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,10 +19,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="ic_logo" id="5DT-RY-uzd" userLabel="Logo Image">
-                    <rect key="frame" x="29" y="140" width="356" height="74"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dG4-px-fIP">
                     <rect key="frame" x="20" y="805" width="374" height="55"/>
                     <color key="backgroundColor" red="0.16315871479999999" green="0.35671681170000002" blue="0.52158868309999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -37,14 +33,17 @@
                         <action selector="didPressFade:" destination="-1" eventType="touchUpInside" id="lJg-dS-im5"/>
                     </connections>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo" translatesAutoresizingMaskIntoConstraints="NO" id="tGw-dt-at2">
+                    <rect key="frame" x="30" y="108" width="354" height="74"/>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="9Jd-8D-5Ro"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="5DT-RY-uzd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="29" id="5m9-BU-8nY"/>
-                <constraint firstAttribute="trailing" secondItem="5DT-RY-uzd" secondAttribute="trailing" constant="29" id="9l1-hz-mmL"/>
-                <constraint firstItem="5DT-RY-uzd" firstAttribute="top" secondItem="9Jd-8D-5Ro" secondAttribute="top" constant="64" id="dd4-8s-ehC"/>
+                <constraint firstItem="tGw-dt-at2" firstAttribute="leading" secondItem="9Jd-8D-5Ro" secondAttribute="leading" constant="30" id="4G8-gD-GdY"/>
                 <constraint firstAttribute="trailing" secondItem="dG4-px-fIP" secondAttribute="trailing" constant="20" symbolic="YES" id="hpd-e9-7gj"/>
+                <constraint firstItem="9Jd-8D-5Ro" firstAttribute="trailing" secondItem="tGw-dt-at2" secondAttribute="trailing" constant="30" id="i7M-df-RMT"/>
+                <constraint firstItem="tGw-dt-at2" firstAttribute="top" secondItem="9Jd-8D-5Ro" secondAttribute="top" constant="64" id="pKR-dJ-Pxj"/>
                 <constraint firstAttribute="bottom" secondItem="dG4-px-fIP" secondAttribute="bottom" constant="36" id="rvs-5D-GN0"/>
                 <constraint firstItem="dG4-px-fIP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="xpg-f8-jV8"/>
             </constraints>

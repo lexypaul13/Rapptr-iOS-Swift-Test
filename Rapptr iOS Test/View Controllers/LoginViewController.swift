@@ -29,8 +29,10 @@ class LoginViewController: UIViewController {
     
     // MARK: - Properties
         
+    @IBOutlet weak var emailContainer: UIView!
     @IBOutlet weak var tfEmailAddress: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
+    @IBOutlet weak var passwordContainer: UIView!
     
     var timeTakenInApiCall = 0.0
     var timer :Timer?
@@ -39,7 +41,13 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Login"
-        decorateView()
+       // decorateView()
+        if #available(iOS 13, *){
+            [emailContainer,passwordContainer].forEach {
+                $0?.layer.cornerRadius = 6
+                $0?.layer.cornerCurve = .continuous
+            }
+        }
     }
     
     @objc func updateTimer() {
@@ -47,10 +55,7 @@ class LoginViewController: UIViewController {
         }
     
 
-    func decorateView(){
-       tfEmailAddress.addPadding(padding: .equalSpacing(24))
-        tfPassword.addPadding(padding: .equalSpacing(24))
-    }
+  
     
     
     
