@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,50 +16,15 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUP-OT-hEU">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjA-DU-rbg">
-                            <rect key="frame" x="0.0" y="14" width="50" height="50"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="50" id="66T-z8-ssw"/>
-                                <constraint firstAttribute="height" constant="50" id="jQS-Ay-6xF"/>
-                            </constraints>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <state key="normal" image="back"/>
-                            <connections>
-                                <action selector="backAction:" destination="-1" eventType="touchUpInside" id="F3T-r0-u3N"/>
-                            </connections>
-                        </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oF6-Fy-Zb1">
-                            <rect key="frame" x="168.5" y="29" width="38" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" red="0.16315871479999999" green="0.35671681170000002" blue="0.52158868309999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="64" id="Axv-tt-HOq"/>
-                        <constraint firstItem="oF6-Fy-Zb1" firstAttribute="centerY" secondItem="tjA-DU-rbg" secondAttribute="centerY" id="HmI-13-LxM"/>
-                        <constraint firstItem="oF6-Fy-Zb1" firstAttribute="centerX" secondItem="gUP-OT-hEU" secondAttribute="centerX" id="Pjl-uq-6E0"/>
-                        <constraint firstAttribute="bottom" secondItem="tjA-DU-rbg" secondAttribute="bottom" id="YGB-KM-tXd"/>
-                        <constraint firstItem="tjA-DU-rbg" firstAttribute="leading" secondItem="gUP-OT-hEU" secondAttribute="leading" id="ZDY-eD-H5p"/>
-                    </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo" translatesAutoresizingMaskIntoConstraints="NO" id="5DT-RY-uzd" userLabel="Logo Image">
-                    <rect key="frame" x="29" y="168" width="317" height="74"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="ic_logo" id="5DT-RY-uzd" userLabel="Logo Image">
+                    <rect key="frame" x="29" y="140" width="356" height="74"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dG4-px-fIP">
-                    <rect key="frame" x="20" y="576" width="335" height="55"/>
+                    <rect key="frame" x="20" y="805" width="374" height="55"/>
                     <color key="backgroundColor" red="0.16315871479999999" green="0.35671681170000002" blue="0.52158868309999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="55" id="Gyv-IQ-PkA"/>
@@ -72,15 +38,13 @@
                     </connections>
                 </button>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="9Jd-8D-5Ro"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="5DT-RY-uzd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="29" id="5m9-BU-8nY"/>
-                <constraint firstAttribute="trailing" secondItem="gUP-OT-hEU" secondAttribute="trailing" id="9Zn-cA-bN0"/>
                 <constraint firstAttribute="trailing" secondItem="5DT-RY-uzd" secondAttribute="trailing" constant="29" id="9l1-hz-mmL"/>
-                <constraint firstItem="gUP-OT-hEU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ERr-sQ-8UQ"/>
-                <constraint firstItem="gUP-OT-hEU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gYf-1h-5hn"/>
+                <constraint firstItem="5DT-RY-uzd" firstAttribute="top" secondItem="9Jd-8D-5Ro" secondAttribute="top" constant="64" id="dd4-8s-ehC"/>
                 <constraint firstAttribute="trailing" secondItem="dG4-px-fIP" secondAttribute="trailing" constant="20" symbolic="YES" id="hpd-e9-7gj"/>
-                <constraint firstItem="5DT-RY-uzd" firstAttribute="top" secondItem="gUP-OT-hEU" secondAttribute="bottom" constant="104" id="jzb-pW-6wV"/>
                 <constraint firstAttribute="bottom" secondItem="dG4-px-fIP" secondAttribute="bottom" constant="36" id="rvs-5D-GN0"/>
                 <constraint firstItem="dG4-px-fIP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="xpg-f8-jV8"/>
             </constraints>
@@ -88,7 +52,6 @@
         </view>
     </objects>
     <resources>
-        <image name="back" width="24" height="24"/>
         <image name="ic_logo" width="317" height="74"/>
     </resources>
 </document>
