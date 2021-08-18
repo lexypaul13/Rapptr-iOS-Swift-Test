@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		57518EB726C94F81007F4036 /* Extesions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57518EB626C94F81007F4036 /* Extesions.swift */; };
+		5743504C26CBEF270084DA56 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5743504B26CBEF270084DA56 /* Constants.swift */; };
+		57518EB726C94F81007F4036 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57518EB626C94F81007F4036 /* Extensions.swift */; };
 		E9414DB726C45CF300512A71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9414DB626C45CF300512A71 /* AppDelegate.swift */; };
 		E9414DC026C45CF400512A71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9414DBF26C45CF400512A71 /* Assets.xcassets */; };
 		E9414DC326C45CF400512A71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9414DC126C45CF400512A71 /* LaunchScreen.storyboard */; };
@@ -28,7 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		57518EB626C94F81007F4036 /* Extesions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extesions.swift; sourceTree = "<group>"; };
+		5743504B26CBEF270084DA56 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		57518EB626C94F81007F4036 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E9414DB326C45CF300512A71 /* Rapptr iOS Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rapptr iOS Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9414DB626C45CF300512A71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9414DBF26C45CF400512A71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,10 +63,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5743504A26CBEEF00084DA56 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				5743504B26CBEF270084DA56 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		57518EB526C94F58007F4036 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				57518EB626C94F81007F4036 /* Extesions.swift */,
+				57518EB626C94F81007F4036 /* Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -88,6 +98,7 @@
 		E9414DB526C45CF300512A71 /* Rapptr iOS Test */ = {
 			isa = PBXGroup;
 			children = (
+				5743504A26CBEEF00084DA56 /* Constants */,
 				57518EB526C94F58007F4036 /* Extensions */,
 				E9414DB626C45CF300512A71 /* AppDelegate.swift */,
 				E9414DE926C468D700512A71 /* SceneDelegate.swift */,
@@ -234,8 +245,9 @@
 				E9414DD626C4617B00512A71 /* ChatTableViewCell.swift in Sources */,
 				E9414DE226C4618900512A71 /* AnimationViewController.swift in Sources */,
 				E9414DB726C45CF300512A71 /* AppDelegate.swift in Sources */,
-				57518EB726C94F81007F4036 /* Extesions.swift in Sources */,
+				57518EB726C94F81007F4036 /* Extensions.swift in Sources */,
 				E9414DE626C4618900512A71 /* LoginViewController.swift in Sources */,
+				5743504C26CBEF270084DA56 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

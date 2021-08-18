@@ -8,25 +8,24 @@ import UIKit
 
 class AnimationViewController: UIViewController {
     
-    /**
-     * =========================================================================================
-     * INSTRUCTIONS
-     * =========================================================================================
-     * 1) Make the UI look like it does in the mock-up.
-     *
-     * 2) Logo should fade out or fade in when the user hits the Fade In or Fade Out button
-     *
-     * 3) User should be able to drag the logo around the screen with his/her fingers
-     *
-     * 4) Add a bonus to make yourself stick out. Music, color, fireworks, explosions!!! Have Swift experience? Why not write the Animation 
-     *    section in Swfit to show off your skills. Anything your heart desires!
-     *
-     */
+    
+    var panGesture =  UIPanGestureRecognizer()
+  
+    @IBOutlet weak var imageLogoView: UIImageView!
+    
+   var isFadeIn = false
+    
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Animation"
+        panGesture = UIPanGestureRecognizer(target: self, action: #selector(draggedView(_:)))
+        imageLogoView.isUserInteractionEnabled = true
+        imageLogoView.addGestureRecognizer(panGesture)
+        imageLogoView.fadeOut()
+
+        
     }
     
     // MARK: - Actions
@@ -36,5 +35,21 @@ class AnimationViewController: UIViewController {
     }
     
     @IBAction func didPressFade(_ sender: Any) {
+        if isFadeIn{
+            imageLogoView.fadeOut()
+            isFadeIn = false
+        }
+        else{
+            imageLogoView.fadeIn()
+            isFadeIn = true
+        }
+        
     }
+    
+    @objc func draggedView(_ sender:UIPanGestureRecognizer){
+            self.view.bringSubviewToFront(imageLogoView)
+            let translation = sender.translation(in: self.view)
+        imageLogoView.center = CGPoint(x: imageLogoView.center.x + translation.x, y: imageLogoView.center.y + translation.y)
+            sender.setTranslation(CGPoint.zero, in: self.view)
+        }
 }

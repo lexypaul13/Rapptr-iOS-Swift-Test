@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnimationViewController">
             <connections>
+                <outlet property="imageLogoView" destination="5DT-RY-uzd" id="r3B-37-Vgc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,29 +18,77 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2SR-Rf-ezS">
-                    <rect key="frame" x="16" y="20" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Back"/>
-                    <connections>
-                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="NrF-nM-MJZ"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4X-eb-ZnV">
-                    <rect key="frame" x="103" y="566" width="169" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Fade In"/>
-                    <connections>
-                        <action selector="didPressFade:" destination="-1" eventType="touchUpInside" id="9GZ-O4-LtL"/>
-                    </connections>
-                </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5DT-RY-uzd" userLabel="Logo Image">
-                    <rect key="frame" x="137" y="283" width="100" height="100"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUP-OT-hEU">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjA-DU-rbg">
+                            <rect key="frame" x="0.0" y="14" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="66T-z8-ssw"/>
+                                <constraint firstAttribute="height" constant="50" id="jQS-Ay-6xF"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" image="back"/>
+                            <connections>
+                                <action selector="backAction:" destination="-1" eventType="touchUpInside" id="F3T-r0-u3N"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oF6-Fy-Zb1">
+                            <rect key="frame" x="168.5" y="29" width="38" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.16315871479999999" green="0.35671681170000002" blue="0.52158868309999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="Axv-tt-HOq"/>
+                        <constraint firstItem="oF6-Fy-Zb1" firstAttribute="centerY" secondItem="tjA-DU-rbg" secondAttribute="centerY" id="HmI-13-LxM"/>
+                        <constraint firstItem="oF6-Fy-Zb1" firstAttribute="centerX" secondItem="gUP-OT-hEU" secondAttribute="centerX" id="Pjl-uq-6E0"/>
+                        <constraint firstAttribute="bottom" secondItem="tjA-DU-rbg" secondAttribute="bottom" id="YGB-KM-tXd"/>
+                        <constraint firstItem="tjA-DU-rbg" firstAttribute="leading" secondItem="gUP-OT-hEU" secondAttribute="leading" id="ZDY-eD-H5p"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo" translatesAutoresizingMaskIntoConstraints="NO" id="5DT-RY-uzd" userLabel="Logo Image">
+                    <rect key="frame" x="29" y="168" width="317" height="74"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dG4-px-fIP">
+                    <rect key="frame" x="20" y="576" width="335" height="55"/>
+                    <color key="backgroundColor" red="0.16315871479999999" green="0.35671681170000002" blue="0.52158868309999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="Gyv-IQ-PkA"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                    <state key="normal" title="Fade In">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="didPressFade:" destination="-1" eventType="touchUpInside" id="lJg-dS-im5"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <point key="canvasLocation" x="34.5" y="54.5"/>
+            <constraints>
+                <constraint firstItem="5DT-RY-uzd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="29" id="5m9-BU-8nY"/>
+                <constraint firstAttribute="trailing" secondItem="gUP-OT-hEU" secondAttribute="trailing" id="9Zn-cA-bN0"/>
+                <constraint firstAttribute="trailing" secondItem="5DT-RY-uzd" secondAttribute="trailing" constant="29" id="9l1-hz-mmL"/>
+                <constraint firstItem="gUP-OT-hEU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ERr-sQ-8UQ"/>
+                <constraint firstItem="gUP-OT-hEU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gYf-1h-5hn"/>
+                <constraint firstAttribute="trailing" secondItem="dG4-px-fIP" secondAttribute="trailing" constant="20" symbolic="YES" id="hpd-e9-7gj"/>
+                <constraint firstItem="5DT-RY-uzd" firstAttribute="top" secondItem="gUP-OT-hEU" secondAttribute="bottom" constant="104" id="jzb-pW-6wV"/>
+                <constraint firstAttribute="bottom" secondItem="dG4-px-fIP" secondAttribute="bottom" constant="36" id="rvs-5D-GN0"/>
+                <constraint firstItem="dG4-px-fIP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="xpg-f8-jV8"/>
+            </constraints>
+            <point key="canvasLocation" x="34.399999999999999" y="54.422788605697157"/>
         </view>
     </objects>
+    <resources>
+        <image name="back" width="24" height="24"/>
+        <image name="ic_logo" width="317" height="74"/>
+    </resources>
 </document>

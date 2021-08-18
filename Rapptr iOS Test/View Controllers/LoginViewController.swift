@@ -28,26 +28,29 @@ class LoginViewController: UIViewController {
      **/
     
     // MARK: - Properties
-    private var client: LoginClient?
-    
-    
+        
     @IBOutlet weak var tfEmailAddress: UITextField!
-    
-    
     @IBOutlet weak var tfPassword: UITextField!
     
-    
-    
+    var timeTakenInApiCall = 0.0
+    var timer :Timer?
+  
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Login"
         decorateView()
         
+        
     }
     
+    @objc func updateTimer() {
+        timeTakenInApiCall += 0.01
+        }
+    
+
     func decorateView(){
-        tfEmailAddress.addPadding(padding: .equalSpacing(24))
+       tfEmailAddress.addPadding(padding: .equalSpacing(24))
         tfPassword.addPadding(padding: .equalSpacing(24))
     }
     
@@ -60,5 +63,15 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func didPressLoginButton(_ sender: Any) {
+        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        guard let url = URL(string: "http://dev.rapptrlabs.com/Tests/scripts/login.php") else { return }
+        let parameter: [String: String] = ["email" : "info@rapptrlabs.com", "password" : "Test123"]
+        LoginClient.callPost(url: url, params: parameter) { [self] response in
+            self.timer?.invalidate()
+            self.alert(message:  "time Taken: \(timeTakenInApiCall) ms\n" + response, title: "")
+        } error: { error in
+            self.timer?.invalidate()
+            self.alert(message:"time Taken: \(self.timeTakenInApiCall)m\n\(error ?? "")"  , title: "")
+        }
     }
 }

@@ -21,13 +21,60 @@ import Foundation
  * 4) email - info@rapptrlabs.com
  *   password - Test123
  *
-*/
+ */
 
-class LoginClient {
+
+class LoginClient{
+    static func getPostString(params:[String:Any]) -> String{
+        var data = [String]()
+        for(key, value) in params{
+            data.append(key + "=\(value)")
+        }
+        return data.map { String($0) }.joined(separator: "&")
+    }
     
-    var session: URLSession?
-    
-    func login(email: String, password: String, completion: @escaping (String) -> Void, error errorHandler: @escaping (String?) -> Void) {
+    static func callPost(url:URL, params:[String:Any], completed:@escaping (String) -> Void, error errorHandler: @escaping (String?) -> Void){
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
         
+        let postString = self.getPostString(params: params)
+        request.httpBody = postString.data(using: .utf8)
+        
+        var result:(message:String, data:Data?) = (message: "Fail", data: nil)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            if(error != nil){
+                result.message = "Fail Error not null : \(error.debugDescription)"
+                errorHandler(result.message)
+            }
+            else{
+                result.message = "Success"
+                result.data = data
+                let json = try? JSONSerialization.jsonObject(with: data!) as? Dictionary<String, AnyObject>
+                completed(jsonToString(json: json as Any))
+                
+            }
+            
+            
+        }
+        task.resume()
     }
 }
+
+func jsonToString(json: Any) -> String{
+    do {
+        let data1 =  try JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted) // first of all convert json to the data
+        let convertedString = String(data: data1, encoding: String.Encoding.utf8) // the data will be converted to the string
+        print(convertedString) // <-- here is ur string
+        return convertedString ?? ""
+        
+    } catch let myJSONError {
+        print(myJSONError)
+        
+        
+    }
+    
+    return ""
+}
+
+

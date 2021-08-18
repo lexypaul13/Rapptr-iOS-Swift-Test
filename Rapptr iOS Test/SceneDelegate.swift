@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         
-        let menuViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
+        let menuViewController = MenuViewController(nibName: "MenuViewController", bundle: nil)
         let navigationController = UINavigationController(rootViewController: menuViewController)
         navigationController.navigationBar.isHidden = true
         window.rootViewController = navigationController
